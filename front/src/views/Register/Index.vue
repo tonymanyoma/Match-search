@@ -62,9 +62,18 @@ export default {
   methods: {
 
     register () {
+        var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+      var result = validEmail.test(this.email)
+
       if (this.email === '' || this.password === '' || this.name === '') {
         this.$vs.notify({
           text: 'Debes agregar un nombre , email y una contraseña',
+          color: 'danger',
+          icon: 'warning'
+        })
+     }else if (result === false) {
+        this.$vs.notify({
+          text: 'Debes agregar un email válido',
           color: 'danger',
           icon: 'warning'
         })

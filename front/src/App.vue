@@ -3,6 +3,37 @@
     <router-view/>
   </div>
 </template>
+<sript>
+/*eslint-disable */
+import { misMixins } from '../mixins.js'
+export default {
+  created: function () {
+
+  },
+
+  data () {
+    return {
+
+    }
+  },
+
+  mixins: [misMixins],
+
+  methods: {
+    Existuser() {
+      const authToken = window.localStorage.getItem('token');
+      if( authToken !== null ){
+
+        this.$router.push({ path: '/home' });
+
+      }else{
+        this.$router.push({ path: '/' });
+      }
+   },
+
+  }
+}
+</sript>
 
 <style lang="scss">
 #app {

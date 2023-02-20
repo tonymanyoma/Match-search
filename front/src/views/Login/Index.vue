@@ -58,9 +58,20 @@ export default {
   methods: {
 
     login () {
+
+      var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+      var result = validEmail.test(this.email)
+
       if (this.email === '' || this.password === '') {
         this.$vs.notify({
           text: 'Debes agregar un email y una contraseña',
+          color: 'danger',
+          icon: 'warning'
+        })
+
+      }else if (result === false) {
+        this.$vs.notify({
+          text: 'Debes agregar un email válido',
           color: 'danger',
           icon: 'warning'
         })
@@ -84,6 +95,7 @@ export default {
             this.loadingClose()
             this.email = ''
             this.password = ''
+            this.$router.push({name: 'home'})
         }).catch(error => {
             console.log('error', error.response.data.message)
             if (error) {

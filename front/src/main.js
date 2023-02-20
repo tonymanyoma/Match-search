@@ -17,6 +17,8 @@ Vue.use(VueAxios, axios)
 Vue.axios.defaults.baseURL = 'http://localhost:8000/api/'
 // Vue.axios.defaults.baseURL = 'https://rickandmortyapi.com/api/'
 
+Vue.component('table_search', require('./views/Home/Table.vue').default)
+Vue.component('nav_bar', require('./components/navBar.vue').default)
 Vue.use(vmodal)
 
 Vue.config.productionTip = false

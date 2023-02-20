@@ -51,7 +51,11 @@ class BusquedaService
 
                 $response = [
                     'nombre' => $value['nombre'],
-                    "porcentaje" => round($lev, 2)
+                    'tipo_persona' => $value['tipo_persona'],
+                    'tipo_cargo' => $value['tipo_cargo'],
+                    'departamento' => $value['departamento'],
+                    'municipio' => $value['municipio'],
+                    'porcentaje' => round($lev, 2)
                 ];
                 array_push($array, $response );
             }
@@ -88,6 +92,7 @@ class BusquedaService
 
         return response()->json([
             'success' => true,
+            'id' => $request->id,
             'data' => $searches
         ], Response::HTTP_OK);
 
