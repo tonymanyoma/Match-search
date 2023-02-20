@@ -14,7 +14,6 @@ use App\Http\Services\AuthService;
 
 class AuthController extends Controller
 {
-    public $loginAfterSignUp = true;
  
     public function register(RegisterAuthRequest $request)
     {
@@ -29,7 +28,7 @@ class AuthController extends Controller
     public function login(LoginAuthRequest $request)
     {
         $validated = $request->validated();
-        
+
         $Auth = new AuthService();
         return response()->json( $Auth->login($request) );
 

@@ -37,7 +37,7 @@ class AuthService
                 
             return response()->json([
                 'success' => false,
-                'message' => 'Lo siento, el usuario no pudo ser registrado'
+                'message' => 'Lo sentimos, el usuario no pudo ser registrado'
             ], Response::HTTP_INTERNAL_SERVER_ERROR);
         }   
     }
@@ -69,12 +69,12 @@ class AuthService
  
             return response()->json([
                 'success' => true,
-                'message' => 'User logged out successfully'
+                'message' => 'sesión cerrada con éxito'
             ]);
         } catch (JWTException $exception) {
             return response()->json([
                 'success' => false,
-                'message' => 'Sorry, the user cannot be logged out'
+                'message' => 'Lo sentidos, la sesión no pudo ser cerrada'
             ], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }

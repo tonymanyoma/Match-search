@@ -19,5 +19,6 @@ Route::post('register', 'AuthController@register');
  
 Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('logout', 'AuthController@logout');
- 
+    Route::post('search', 'BusquedaController@search');
+    Route::post('getSearches', 'BusquedaController@getSearches');
 });
