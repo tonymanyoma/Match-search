@@ -31,7 +31,7 @@ class BusquedaService
         $data = preg_replace('([^A-Za-z0-9])', '', $accent);
         return $format = strtolower($data);
     }
-    
+
 
     public function search($request)
     {
@@ -61,6 +61,8 @@ class BusquedaService
             }
 
         }
+
+        array_multisort(array_column($array, 'porcentaje'), SORT_DESC, $array);
 
         $Search = new Busqueda();
         $Search->nombre_buscado = $request->name;
