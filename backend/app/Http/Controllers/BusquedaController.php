@@ -23,7 +23,8 @@ class BusquedaController extends Controller
         $validated = $request->validated();
 
         $Busqueda = new BusquedaService();
-        return response()->json( $Busqueda->search($request) );
+        $response = $Busqueda->search($request);
+        return $response;
     }
 
     public function getSearches(getSearchRequest $request)
@@ -31,7 +32,8 @@ class BusquedaController extends Controller
         $validated = $request->validated();
 
         $Busqueda = new BusquedaService();
-        return response()->json( $Busqueda->getSearches($request) );
+        $response = $Busqueda->getSearches($request);
+        return $response;
     }
 
    

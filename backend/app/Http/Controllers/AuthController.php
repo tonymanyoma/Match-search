@@ -21,7 +21,8 @@ class AuthController extends Controller
         $validated = $request->validated();
 
         $Auth = new AuthService();
-        return response()->json( $Auth->register($request) );
+        $response = $Auth->register($request);
+        return $response;
   
     }
  
@@ -30,7 +31,9 @@ class AuthController extends Controller
         $validated = $request->validated();
 
         $Auth = new AuthService();
-        return response()->json( $Auth->login($request) );
+        $response = $Auth->login($request);
+        return $response;
+
 
     }
  
@@ -38,7 +41,8 @@ class AuthController extends Controller
     {
 
         $Auth = new AuthService();
-        return response()->json( $Auth->logout($request) );
+        $response = $Auth->logout($request);
+        return $response;
 
     }
  
