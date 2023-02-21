@@ -10,10 +10,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AuthService
 {
+    // Servicio de autenticacion
 
     public $loginAfterSignUp = true;
 
-
+    //Funcion para registrar un usuario
     public function register($request)
     {
         try {
@@ -42,6 +43,7 @@ class AuthService
         }   
     }
 
+    //Funcion par aloguear un usuario
     public function login($request)
     {
         $input = $request->only('email', 'password');
@@ -60,6 +62,7 @@ class AuthService
         ]);
     }
 
+    //Funcion para cerrar la sesion
     public function logout($request)
     {
 

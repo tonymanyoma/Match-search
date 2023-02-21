@@ -61,6 +61,7 @@ export default {
 
   methods: {
 
+    // metodo para registrar un usuario
     register () {
         var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
       var result = validEmail.test(this.email)

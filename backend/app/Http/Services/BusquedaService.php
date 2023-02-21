@@ -13,10 +13,12 @@ use Symfony\Component\HttpFoundation\Response;
 class BusquedaService
 {
 
+    // Función para calcular la coincidencia ente 2 nombres utilizando levenshtein
     function calLevenshtein($str1, $str2) {
         return (1 - levenshtein($str1, $str2)/max(strlen($str1), strlen($str2)))*100;
     }
 
+    // Funcion para remover los acentos de un nombre
     function removeAccent($str){
         $data1 = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿ';
         $data2 = 'aaaaaaaceeeeiiiidnoooooouuuuybsaaaaaaaceeeeiiiidnoooooouuuyyby';
@@ -25,6 +27,7 @@ class BusquedaService
         return utf8_encode($str);
     }
 
+    // Funcion  paraquitar caracteres especiales de un nombre
     function formatString($str) {
         // $str = strtolower('Jorge Eliecer Coral Rivás');
         $accent = $this->removeAccent($str);
@@ -32,7 +35,7 @@ class BusquedaService
         return $format = strtolower($data);
     }
 
-
+    // Funcion para buscar coincidencias ente los nombre y guardar los registros
     public function search($request)
     {
 
@@ -82,6 +85,7 @@ class BusquedaService
 
     }
 
+    // Funcion par aobtener busquedas guardadas por id
     public function getSearches($request)
     {
         $searches;

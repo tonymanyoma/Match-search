@@ -38,6 +38,7 @@ export default {
 
   methods: {
 
+    //metodo para cerrar sesion
     logout(){
         this.loadingOpen()
         this.axios({

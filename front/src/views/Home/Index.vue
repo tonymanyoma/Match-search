@@ -67,6 +67,7 @@ export default {
 
   methods: {
 
+    //metodo para validar si se va a crear una nueva busqueda o si se va a traer una busqueda anterior
     validateSearch(data){
         if(data == true){
             this.history()
@@ -75,6 +76,7 @@ export default {
         }
     },
 
+    // metodo para traer una busqueda anterior
     history () {
       if (this.searchId === '') {
         this.$vs.notify({
@@ -124,6 +126,7 @@ export default {
 
    },
 
+   // metodo para realizar una busqueda 
     search () {
       if (this.percent === '' || this.name === '') {
         this.$vs.notify({
