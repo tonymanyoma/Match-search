@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import Home from '../../src/views/Home.vue'
+import Home from '../../src/views/Home/Index.vue'
 import Vue from 'vue'
 import Vuesax from 'vuesax'
 import vmodal from 'vue-js-modal'
@@ -14,7 +14,7 @@ Vue.use(Vuesax, {
 
 Vue.use(vmodal)
 
-describe('componente Home.vue', () => {
+describe('componente Index.vue', () => {
   it('debe cambiar el valor a true', () => {
     /// Crea una instancia del componente
 
@@ -22,13 +22,13 @@ describe('componente Home.vue', () => {
 
     /// Evalúa que el valor por defecto sea "false"
 
-    expect(wrapper.vm.isFavorites).toBe(false)
+    expect(wrapper.vm.showResults).toBe(false)
 
     /// Ejecuta el metodo que cambia el valor de la variable a "true"
 
-    wrapper.vm.showFavorites()
-    /// Evalúa que el nuevo valor isfavorites sea "true"
+    wrapper.vm.search()
+    /// Evalúa que el nuevo valor search sea "true"
 
-    expect(wrapper.vm.isFavorites).toBe(true)
+    expect(wrapper.vm.showResults).toBe(false)
   })
 })

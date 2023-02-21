@@ -57,6 +57,7 @@ export default {
 
   methods: {
 
+    // metodo para iniciar sesion
     login () {
 
       var validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
