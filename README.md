@@ -35,4 +35,4 @@
   - Ejecutar npm run test:unit (este es un test para verificar el cambio de una variable booleana para mostrar u ocultar una tabla)
 
 ## Backend
- - php artisan test (este es un test par aprobar la ruta api/register la cual se encarga de registrar un nuevo usuario)
+ - Ejecutar php artisan test (este es un test par aprobar la ruta api/register la cual se encarga de registrar un nuevo usuario)
